@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: master ('Detalhes', ~{::body})}">
+    <body>
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Detalhes do Item</h4>
+                    <p class="card-title-desc"></p>
+
+                    <div class="table-responsive">
+                        <table class="table mb-0">
+
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Part Number</th>
+                                    <th>Descrição</th>
+                                    <th>Condição</th>
+                                    <th>List Price</th>
+                                    <th>Quantidade</th>
+                                    <th>Local</th>
+                                    <th>Inventário</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td th:text="${item.id}">01</td>
+                                    <td th:text="${item.partNumber}">3011210</td>
+                                    <td th:text="${item.description}">Swivel</td>
+                                    <td th:text="${item.partCondition}">NE</td>
+                                    <td th:text="${item.referencePrice}">20.4</td>
+                                    <td th:text="${item.quantity}">5</td>
+                                    <td th:text="${item.location}">PRAT.A / 3</td>
+                                    <td th:text="${item.inventory.name}">#</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns:th="https://www.thymeleaf.org" th:fragment="master (pageTitle, content, contentTitle)">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link th:href="@{/resources/images/favicon.ico}" rel="shortcut icon">
+
+    <link th:href="@{/resources/css/bootstrap.min.css}" id="bootstrap-style" rel="stylesheet" type="text/css" />
+    <link th:href="@{/resources/css/icons.min.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/resources/css/app.min.css}" id="app-style" rel="stylesheet" type="text/css" />
+
+    <title th:text="${pageTitle}"></title>
+</head>
+
+
+<body data-sidebar="light">
+
+
+<div id="layout-wrapper">
+    <!-- ========== Page Topbar Start ========== -->
+    <header id="page-topbar">
+        <div class="navbar-header">
+            <div class="d-flex">
+                <!-- LOGO -->
+                <div class="navbar-brand-box">
+                    <a href="index.html" class="logo logo-dark">
+                        <span class="logo-sm">
+                            <img th:src="@{/resources/images/ui/LOGO_Icon_64.png}" alt="" height="32">
+                        </span>
+                        <span class="logo-lg">
+                            <img th:src="@{/resources/images/ui/LOGO_Full_L.png}" alt="" height="32">
+                        </span>
+                    </a>
+
+                    <a href="index.html" class="logo logo-light">
+                        <span class="logo-sm">
+                            <img th:src="@{/resources/images/ui/LOGO_Icon_64.png}" alt="" height="32">
+                        </span>
+                        <span class="logo-lg">
+                            <img th:src="@{/resources/images/ui/LOGO_Full_L.png}" alt="" height="32">
+                        </span>
+                    </a>
+                </div>
+
+                <button type="button" class="btn btn-sm px-3 font-size-16 header-item waves-effect" id="vertical-menu-btn">
+                    <i class="fa fa-fw fa-bars"></i>
+                </button>
+
+            </div>
+
+            <div class="d-flex">
+                <div class="dropdown d-none d-lg-inline-block ml-1">
+                    <button type="button" class="btn header-item noti-icon waves-effect" data-toggle="fullscreen">
+                        <i class="bx bx-fullscreen"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Page Topbar End -->
+
+    <!-- ========== Left Sidebar Start ========== -->
+    <div class="vertical-menu">
+
+        <div data-simplebar class="h-100">
+
+            <!--- Sidemenu -->
+            <div id="sidebar-menu">
+
+            </div>
+            <!-- Sidebar -->
+        </div>
+    </div>
+    <!-- Left Sidebar End -->
+
+    <!-- ============================================================== -->
+    <!-- Content Start -->
+    <!-- ============================================================== -->
+    <div class="main-content">
+        <div class="page-content">
+            <div class="container-fluid">
+
+                <!-- Page Title Start -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="page-title-box d-flex align-items-center justify-content-between">
+                            <h4 class="mb-0 font-size-18" th:text="${contentTitle}">Starter Page</h4>
+
+                            <!--
+                            <div class="page-title-right">
+                                <ol class="breadcrumb m-0">
+                                    <li class="breadcrumb-item"><a href="javascript: void(0);">Utility</a></li>
+                                    <li class="breadcrumb-item active">Starter Page</li>
+                                </ol>
+                            </div>
+                            -->
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Page Title End -->
+
+                <th:block th:include="${content}"/>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-6">
+                        Thrust OS © <script>document.write(new Date().getFullYear())</script>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="text-sm-right d-none d-sm-block">
+                            Desenvolvido por Kevin Raian
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Content End -->
+    <!-- =============================================================== -->
+</div>
+
+<!-- ========== Right Sidebar Start ========== -->
+<div class="right-bar">
+    <div data-simplebar class="h-100">
+
+    </div> <!-- end slimscroll-menu-->
+</div>
+<!-- Right Sidebar End -->
+
+<!-- Right Sidebar Overlay-->
+<div class="rightbar-overlay"></div>
+
+<!-- SCRIPTS -->
+<script th:src="@{/resources/libs/jquery/jquery.min.js}"></script>
+<script th:src="@{/resources/libs/bootstrap/js/bootstrap.bundle.min.js}"></script>
+<script th:src="@{/resources/libs/metismenu/metisMenu.min.js}"></script>
+<script th:src="@{/resources/libs/simplebar/simplebar.min.js}"></script>
+<script th:src="@{/resources/libs/node-waves/waves.min.js}"></script>
+
+<script th:src="@{/resources/js/app.js}"></script>
+
+</body>
+</html>
